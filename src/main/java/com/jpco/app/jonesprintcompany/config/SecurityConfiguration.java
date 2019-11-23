@@ -19,14 +19,34 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+    	
+        String[] staticResources  =  {
+        		"/registration**",
+                "/css/**",
+                "/images/**",
+                "/fonts/**",
+                "/js/**",
+                "/webjars/**",
+            };
+    	
         http
+        
+//		http
+//		.csrf().disable()
+//		.authorizeRequests()
+//			.antMatchers("/login").permitAll()
+//			.antMatchers("/").authenticated()
+//		.and()
+//		.formLogin()
+//		.loginPage("/login").permitAll()
+//		.and()
+//		.logout().invalidateHttpSession(true)
+//		.clearAuthentication(true)
+//		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//		.logoutSuccessUrl("/logout-success").permitAll();
+        
                 .authorizeRequests()
-                    .antMatchers(
-                            "/registration**",
-                            "/js/**",
-                            "/css/**",
-                            "/img/**",
-                            "/webjars/**").permitAll()
+                	.antMatchers(staticResources).permitAll()                    
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
