@@ -7,10 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    @GetMapping("/")
+    @GetMapping(value={"", "/", "index"})
     public String root() {
         return "index";
     }
+    
+    @GetMapping("/admin")
+    public String adminIndex(Model model) {
+        return "index2";
+    }
+
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -21,4 +27,45 @@ public class MainController {
     public String userIndex() {
         return "user/index";
     }
+    
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
+    
+    @GetMapping("/services")
+    public String services() {
+        return "services";
+    }
+    
+    @GetMapping("/place-order")
+    public String placeOrder() {
+        return "place-order";
+    }
+    
+    @GetMapping("/about-us")
+    public String aboutUs() {
+        return "about-us";
+    }
+    
+    @GetMapping("/pricing")
+    public String pricing() {
+        return "pricing";
+    }
+    
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+    
+    @GetMapping("/login-2")
+    public String login2() {
+        return "login-2";
+    }
+    
+    @GetMapping("/login-2baf7")
+    public String account() {
+        return "login-2baf7";
+    }
+
 }

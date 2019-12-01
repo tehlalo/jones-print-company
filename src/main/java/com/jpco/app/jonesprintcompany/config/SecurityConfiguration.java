@@ -21,12 +21,40 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	
         String[] staticResources  =  {
-        		"/registration**",
+        		"/2019/**",
+        		"/author/**",
+        		"/category/**",
+        		"/comments/**",
+        		"/scss/**",
+        		"/vendor/**",
+        		"/wp-content/**",
+        		"/wp-includes/**",
+        		"/localhost/**",
+        		"/wp-json/**",
                 "/css/**",
                 "/images/**",
                 "/fonts/**",
                 "/js/**",
                 "/webjars/**",
+            };
+        
+        String[] templatesResources  =  {
+        		"/",        		
+        		"/register**",
+        		"/registration**",
+        		"/index**",
+        		"/contact**",
+        		"/about-us**",
+        		"/password-reset**",
+        		"/login-2baf7**",
+        		"/login-2**",
+        		"/login**",
+        		"/pricing**",
+        		"/services**",
+            };
+        
+        String[] userRolePages  =  {
+        		"/place-order**",
             };
     	
         http
@@ -46,7 +74,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //		.logoutSuccessUrl("/logout-success").permitAll();
         
                 .authorizeRequests()
-                	.antMatchers(staticResources).permitAll()                    
+                	.antMatchers(staticResources).permitAll()  
+                	.antMatchers(templatesResources).permitAll()
+                	.antMatchers(userRolePages).permitAll()
+                	
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
