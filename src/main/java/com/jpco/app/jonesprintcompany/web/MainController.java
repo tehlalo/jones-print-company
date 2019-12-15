@@ -18,9 +18,9 @@ public class MainController {
     }
 
 
-    @GetMapping("/login")
+    @GetMapping("/login-2")
     public String login(Model model) {
-        return "login";
+        return "login-2";
     }
 
     @GetMapping("/user")
@@ -28,11 +28,7 @@ public class MainController {
         return "user/index";
     }
     
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
-    
+  
     @GetMapping("/services")
     public String services() {
         return "services";
@@ -56,12 +52,8 @@ public class MainController {
     @GetMapping("/contact")
     public String contact() {
         return "contact";
-    }
-    
-    @GetMapping("/login-2")
-    public String login2() {
-        return "login-2";
-    }
+    }   
+
     
     @GetMapping("/login-2baf7")
     public String account() {

@@ -158,21 +158,26 @@ img.emoji {
 
 	<div class="um-form">
 
-		<form method="post" action="#">
+		<form method="post" th:action="@{/register}" th:object="${user}">
 
-			<div class="um-row _um_row_1 " style="margin: 0 0 30px 0;"><div class="um-col-1"><div class="um-field um-field-user_login um-field-text um-field-type_text" data-key="user_login"><div class="um-field-label"><label for="user_login-230">Username</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="user_login-230" id="user_login-230" value="" placeholder="" data-validate="unique_username" data-key="user_login" />
+			<div class="um-row _um_row_1 " style="margin: 0 0 30px 0;">
+				<div class="um-col-1">
+				
+						<div class="um-field um-field-first_name um-field-text um-field-type_text" data-key="first_name"><div class="um-field-label"><label for="first_name-230">First Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="first_name-230" id="firstName" th:field="*{firstName}" value="" placeholder="" data-validate="" data-key="first_name" />
 
-                        </div></div><div class="um-field um-field-first_name um-field-text um-field-type_text" data-key="first_name"><div class="um-field-label"><label for="first_name-230">First Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="first_name-230" id="first_name-230" value="" placeholder="" data-validate="" data-key="first_name" />
+                        </div></div><div class="um-field um-field-last_name um-field-text um-field-type_text" data-key="last_name"><div class="um-field-label"><label for="last_name-230">Last Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="last_name-230" id="lastName" th:field="*{lastName}" value="" placeholder="" data-validate="" data-key="last_name" />
 
-                        </div></div><div class="um-field um-field-last_name um-field-text um-field-type_text" data-key="last_name"><div class="um-field-label"><label for="last_name-230">Last Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="last_name-230" id="last_name-230" value="" placeholder="" data-validate="" data-key="last_name" />
+                        </div></div><div class="um-field um-field-user_email um-field-text um-field-type_text" data-key="user_email"><div class="um-field-label"><label for="user_email-230">E-mail Address</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="user_email-230" id="email" th:field="*{email}" value="" placeholder="" data-validate="unique_email" data-key="user_email" />
 
-                        </div></div><div class="um-field um-field-user_email um-field-text um-field-type_text" data-key="user_email"><div class="um-field-label"><label for="user_email-230">E-mail Address</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="user_email-230" id="user_email-230" value="" placeholder="" data-validate="unique_email" data-key="user_email" />
+                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="user_password"><div class="um-field-label"><label for="user_password-230">Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="user_password-230" id="password" th:field="*{password}" value="" placeholder="" data-validate="" data-key="user_password" />
 
-                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="user_password"><div class="um-field-label"><label for="user_password-230">Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="user_password-230" id="user_password-230" value="" placeholder="" data-validate="" data-key="user_password" />
+                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="confirm_user_password"><div class="um-field-label"><label for="confirm_user_password-230">Confirm Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="confirm_user_password-230" id="confirmPassword" th:field="*{confirmPassword}" value="" placeholder="" data-validate="" data-key="confirm_user_password" />
 
-                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="confirm_user_password"><div class="um-field-label"><label for="confirm_user_password-230">Confirm Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="confirm_user_password-230" id="confirm_user_password-230" value="" placeholder="" data-validate="" data-key="confirm_user_password" />
-
-                                </div></div></div></div>		<input type="hidden" name="form_id" id="form_id_230" value="230" />
+                                </div></div>
+                  </div>
+              </div>		
+              
+              <input type="hidden" name="form_id" id="form_id_230" value="230" />
 	
 	<input type="hidden" name="timestamp" class="um_timestamp" value="1575188722" />
 

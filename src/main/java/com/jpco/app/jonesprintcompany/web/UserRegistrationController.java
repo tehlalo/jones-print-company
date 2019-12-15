@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/registration")
+@RequestMapping("/register")
 public class UserRegistrationController {
 
     @Autowired
@@ -29,7 +29,7 @@ public class UserRegistrationController {
 
     @GetMapping
     public String showRegistrationForm(Model model) {
-        return "registration";
+        return "register";
     }
 
     @PostMapping
@@ -42,11 +42,11 @@ public class UserRegistrationController {
         }
 
         if (result.hasErrors()){
-            return "registration";
+            return "register";
         }
 
         userService.save(userDto);
-        return "redirect:/registration?success";
+        return "redirect:/register?success";
     }
 
 }
