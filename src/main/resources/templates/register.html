@@ -6,6 +6,7 @@
 	<meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="pingback" href="xmlrpc.php" />
+	  <link href="css/sb-admin.css" rel="stylesheet">
 
 	<script type="text/javascript">
 		document.documentElement.className = 'js';
@@ -159,21 +160,79 @@ img.emoji {
 	<div class="um-form">
 
 		<form method="post" th:action="@{/register}" th:object="${user}">
+		
+							<p class="error-message" th:if="${#fields.hasGlobalErrors()}"
+						th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
+						error</p>
 
 			<div class="um-row _um_row_1 " style="margin: 0 0 30px 0;">
 				<div class="um-col-1">
 				
-						<div class="um-field um-field-first_name um-field-text um-field-type_text" data-key="first_name"><div class="um-field-label"><label for="first_name-230">First Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="first_name-230" id="firstName" th:field="*{firstName}" value="" placeholder="" data-validate="" data-key="first_name" />
-
-                        </div></div><div class="um-field um-field-last_name um-field-text um-field-type_text" data-key="last_name"><div class="um-field-label"><label for="last_name-230">Last Name</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="last_name-230" id="lastName" th:field="*{lastName}" value="" placeholder="" data-validate="" data-key="last_name" />
-
-                        </div></div><div class="um-field um-field-user_email um-field-text um-field-type_text" data-key="user_email"><div class="um-field-label"><label for="user_email-230">E-mail Address</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="user_email-230" id="email" th:field="*{email}" value="" placeholder="" data-validate="unique_email" data-key="user_email" />
-
-                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="user_password"><div class="um-field-label"><label for="user_password-230">Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="user_password-230" id="password" th:field="*{password}" value="" placeholder="" data-validate="" data-key="user_password" />
-
-                        </div></div><div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="confirm_user_password"><div class="um-field-label"><label for="confirm_user_password-230">Confirm Password</label><div class="um-clear"></div></div><div class="um-field-area"><input class="um-form-field valid " type="password" name="confirm_user_password-230" id="confirmPassword" th:field="*{confirmPassword}" value="" placeholder="" data-validate="" data-key="confirm_user_password" />
-
-                                </div></div>
+						<div class="um-field um-field-first_name um-field-text um-field-type_text" data-key="first_name">
+							<div class="um-field-label">
+								<label for="first_name-230">First Name</label>
+								<div class="um-clear">
+								</div>
+							</div>
+							<div class="um-field-area">
+								<input  autocomplete="off" class="um-form-field valid " type="text" name="first_name-230" id="firstName" th:field="*{firstName}" value="" placeholder="" data-validate="" data-key="first_name" />
+	                        </div>
+	                        <p class="error-message" th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>
+                        </div>
+                        <div class="um-field um-field-last_name um-field-text um-field-type_text" data-key="last_name">
+                        	<div class="um-field-label">
+                        		<label for="last_name-230">Last Name</label>
+                        		<div class="um-clear">
+                        		</div>
+                        	</div>
+                        	<div class="um-field-area">
+                        		<input  autocomplete="off" class="um-form-field valid " type="text" name="last_name-230" id="lastName" th:field="*{lastName}" value="" placeholder="" data-validate="" data-key="last_name" />
+                        	</div>
+                        	<p class="error-message" th:each="error : ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>
+                        </div>
+                        <div class="um-field um-field-user_email um-field-text um-field-type_text" data-key="user_email">
+							<div class="um-field-label"><label for="user_email-230">E-mail Address</label>
+								<div class="um-clear">
+								</div>
+							</div>
+							<div class="um-field-area">
+								<input  autocomplete="off" class="um-form-field valid " type="text" name="email" id="email" th:field="*{email}" value="" placeholder="" data-validate="unique_email" data-key="user_email" />
+                        	</div>
+                        	<p class="error-message" th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation	error</p>
+                        </div>
+                        <div class="um-field um-field-user_email um-field-text um-field-type_text" data-key="user_email">
+							<div class="um-field-label"><label for="user_email-230">Confirm E-mail Address</label>
+								<div class="um-clear">
+								</div>
+							</div>
+							<div class="um-field-area">
+								<input  autocomplete="off" class="um-form-field valid " type="text" name="confirmEmail" id="confirmEmail" th:field="*{confirmEmail}" value="" placeholder="" data-validate="unique_email" data-key="user_email" />
+                        	</div>
+                        	<p class="error-message" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">Validation	error</p>
+                        </div>
+                        <div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="user_password">
+                        	<div class="um-field-label">
+                        		<label for="user_password-230">Password</label>
+                        		<div class="um-clear"></div>
+							</div>
+							<div class="um-field-area">
+								<input class="um-form-field valid " type="password" name="user_password-230" id="password" th:field="*{password}" value="" placeholder="" data-validate="" data-key="user_password" />
+                        	</div>
+                        	<p class="error-message" th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>
+                        </div>
+                        <div class="um-field um-field-user_password um-field-password um-field-type_password" data-key="confirm_user_password">
+                        	<div class="um-field-label">
+                       			<label for="confirm_user_password-230">Confirm Password</label>
+                        		<div class="um-clear">
+								</div>
+							</div>
+							<div class="um-field-area">
+								<input class="um-form-field valid " type="password" name="confirm_user_password-230" id="confirmPassword" th:field="*{confirmPassword}" value="" placeholder="" data-validate="" data-key="confirm_user_password" />
+							</div>
+							<p class="error-message"
+							th:each="error : ${#fields.errors('terms')}" th:text="${error}">Validation
+							error</p>
+						</div>
                   </div>
               </div>		
               
@@ -194,7 +253,7 @@ img.emoji {
 				<input type="submit" value="Register" class="um-button" id="um-submit-btn" />
 			</div>
 			<div class="um-right um-half">
-				<a href="login-2.html" class="um-button um-alt">
+				<a th:href="@{/login-2}" class="um-button um-alt">
 					Login				</a>
 			</div>
 

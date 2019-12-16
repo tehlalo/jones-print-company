@@ -11,12 +11,6 @@ public class MainController {
     public String root() {
         return "index";
     }
-    
-    @GetMapping("/admin")
-    public String adminIndex(Model model) {
-        return "index2";
-    }
-
 
     @GetMapping("/login-2")
     public String login(Model model) {

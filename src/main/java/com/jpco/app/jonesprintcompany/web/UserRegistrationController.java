@@ -42,7 +42,9 @@ public class UserRegistrationController {
         }
 
         if (result.hasErrors()){
-            return "register";
+        	
+        	
+        	return "redirect:/register?error";
         }
 
         userService.save(userDto);

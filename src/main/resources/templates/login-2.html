@@ -159,6 +159,7 @@ img.emoji {
 	<div class="um-form">
 
 		<form method="post" th:action="@{/login-2}" autocomplete="off">
+		
 
 			<div class="um-row _um_row_1 " style="margin: 0 0 30px 0;"><div class="um-col-1"><div class="um-field um-field-username um-field-text um-field-type_text" data-key="username"><div class="um-field-label"><label for="username-231">E-mail</label><div class="um-clear"></div></div><div class="um-field-area"><input  autocomplete="off" class="um-form-field valid " type="text" name="username" id="username" value="" placeholder="" data-validate="unique_username_or_email" data-key="username" />
 
@@ -185,7 +186,7 @@ img.emoji {
 				<input type="submit" value="Login" class="um-button" id="um-submit-btn" />
 			</div>
 			<div class="um-right um-half">
-				<a href="register.html" class="um-button um-alt">
+				<a th:href="@{/register}" class="um-button um-alt">
 					Register				</a>
 			</div>
 
